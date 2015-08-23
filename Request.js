@@ -248,7 +248,7 @@ define([
 
 			arrayUtil.forEach(this.queryLog, function (entry) {
 				var type = entry.type,
-					renderMethod = '_render' + type[0].toUpperCase() + type.substr(1) + 'Params';
+					renderMethod = '_render' + type.charAt(0).toUpperCase() + type.substr(1) + 'Params';
 
 				if (this[renderMethod]) {
 					push.apply(queryParams, this[renderMethod].apply(this, entry.normalizedArguments));
